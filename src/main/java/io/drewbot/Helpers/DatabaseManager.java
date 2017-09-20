@@ -37,6 +37,10 @@ public class DatabaseManager {
         statement.executeUpdate(sqlString);
     }
 
+    public void insertIntoStatTable(Stat myStat) throws SQLException {
+        insertIntoStatTable(myStat.getName(), myStat.getWins(), myStat.getLosses());
+    }
+
     public ArrayList<Stat> getStats() throws SQLException {
 
         ResultSet rs = statement.executeQuery("SELECT * FROM stats;");
